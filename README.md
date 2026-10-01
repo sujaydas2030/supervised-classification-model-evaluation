@@ -17,13 +17,13 @@ After feature scaling and probability cutoff tuning (optimal threshold: **0.45**
 ### Key Findings
 1. **Linear Separation Supremacy:** Both Logistic Regression and Linear SVC outperformed the Tuned Decision Tree by **8 percentage points** in overall accuracy (72% vs. 64%).
 2. **Threshold Optimization:** Evaluating accuracy, sensitivity, and specificity across probability cutoffs identified **0.45** as the optimal operating point to balance class precision and recall.
-3. **Regularization:** Built-in $L_2$ regularization in Logistic Regression prevented overfitting effectively on the scaled inputs.
+3. **Regularization:** Built-in $L_2$ regularization in Logistic Regression prevented overfitting effectively on the min-max scaled inputs.
 
 ---
 
 ## Project Workflow
 
-1. **Preprocessing & Feature Scaling:** Applied standard scaling (`StandardScaler`) across features for linear and support vector models.
+1. **Preprocessing & Feature Scaling:** Applied min-max scaling (`MinMaxScaler`) across features for linear and support vector models.
 2. **Model Implementation:**
    * Tuned Decision Tree (baseline tree model)
    * Support Vector Classifier (SVC)
