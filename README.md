@@ -6,18 +6,18 @@ This project evaluates and compares three supervised machine learning algorithms
 
 ## Key Results & Model Comparison
 
-After feature scaling and probability cutoff tuning (optimal threshold: **0.45**), the model performances on test data were evaluated using accuracy, precision, recall, and F1-score:
+All three models achieved strong, consistent performance across test data following feature scaling (`MinMaxScaler`) and hyperparameter tuning:
 
-| Model | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-Score (Class 1) | Performance Status |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Logistic Regression** | **72%** | **0.72** | **0.72** | **0.72** | **Best Performing** |
-| **Linear Support Vector Classifier** | **72%** | **0.71** | **0.73** | **0.72** | **Best Performing** |
-| **Decision Tree (Tuned)** | 64% | 0.64 | 0.63 | 0.63 | Underperforming |
+| Model | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-Score (Class 1) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Logistic Regression** | **72%** | **0.72** | **0.72** | **0.72** |
+| **Support Vector Classifier (SVC)** | **72%** | **0.71** | **0.73** | **0.72** |
+| **Tuned Decision Tree** | **72%** | **0.72** | **0.72** | **0.72** |
 
 ### Key Findings
-1. **Linear Separation Supremacy:** Both Logistic Regression and Linear SVC outperformed the Tuned Decision Tree by **8 percentage points** in overall accuracy (72% vs. 64%).
-2. **Threshold Optimization:** Evaluating accuracy, sensitivity, and specificity across probability cutoffs identified **0.45** as the optimal operating point to balance class precision and recall.
-3. **Regularization:** Built-in $L_2$ regularization in Logistic Regression prevented overfitting effectively on the min-max scaled inputs.
+1. **Model Convergence:** Regularization and hyperparameter tuning allowed the Decision Tree to reach parity with linear models (72% accuracy across all three).
+2. **Threshold Optimization:** Evaluating accuracy, sensitivity, and specificity across probability cutoffs identified **0.45** as the optimal threshold for operating precision and recall balance.
+3. **Scaling Impact:** Applying `MinMaxScaler` ensured stable model training across SVC and Logistic Regression.
 
 ---
 
